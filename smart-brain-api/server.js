@@ -13,7 +13,7 @@ const { HOST, PORT, USER, PASSWORD, DATABASE } = process.env;
 const db = knex({
     client: 'pg',
     connection: {
-      host: HOST,  //local host//
+      host: HOST,
       port: PORT,
       user: USER,
       password: PASSWORD,
