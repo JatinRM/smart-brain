@@ -2,20 +2,22 @@ const express = require('express');
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
+require('dotenv').config();
 
 const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
+const { HOST, PORT, USER, PASSWORD, DATABASE } = process.env;
 const db = knex({
     client: 'pg',
     connection: {
-      host: '127.0.0.1',  //local host//
-      port: 5432,
-      user: 'postgres',
-      password: 'Jatin@2001',
-      database: 'smartbrain',
+      host: HOST,  //local host//
+      port: PORT,
+      user: USER,
+      password: PASSWORD,
+      database: DATABASE,
     },
 });
 
